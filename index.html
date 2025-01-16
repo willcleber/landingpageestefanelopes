@@ -23,17 +23,20 @@
                 <img src="images/logo.png" alt="Logotipo" class="logo">
             </a>
         </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="nav-links">
             <a href="#inicio">Início</a>
             <a href="#servicos">Serviços</a>
             <a href="#galeria">Galeria</a>
             <a href="#profissional">Profissional</a>
             <a href="#contato">Contato</a>
-            <!-- Links das Redes Sociais -->
             <a href="https://www.instagram.com/estefanelopesfisio_/" target="_blank" class="social-link">
                 <i class="fab fa-instagram"></i>
             </a>
-            <!-- Link do WhatsApp -->
             <a href="https://wa.me/5564992406206" target="_blank" class="social-link">
                 <i class="fab fa-whatsapp"></i>
             </a>
@@ -204,4 +207,25 @@
     <footer>
         <p>&copy; Site criado por <a href="https://www.linkedin.com/in/wilcleber-caetano-macedo-07908535/" target="_blank" class="linkedin-link">Wilcleber <i class="fab fa-linkedin"></i></a>. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const links = document.querySelectorAll('.nav-links a');
+    
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+    
+            // Fecha o menu ao clicar em um link
+            links.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+    </script>
 </body>
