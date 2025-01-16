@@ -378,7 +378,7 @@ footer {
     }
 
     .gallery-item {
-        aspect-ratio: 16/9;
+        aspect-ratio: 9/16;
     }
 
     /* Profissional */
