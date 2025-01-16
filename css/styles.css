@@ -11,60 +11,42 @@ body {
 }
 
 /* Navegação */
-/* Navegação transparente atualizada */
 .navigation {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
     z-index: 100;
-    display: flex;
-    justify-content: center; /* Centraliza todo o conteúdo */
-    align-items: center;
-    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* Alinha logo e links na mesma linha */
+    justify-content: center; /* Centraliza todos os itens */
+    align-items: center; /* Centraliza verticalmente */
 }
 
 .nav-logo {
-    margin-right: 2rem;
+    margin-right: 1rem; /* Um pequeno espaço entre a logotipo e os links */
 }
 
 .logo {
-    height: 80px;
-    width: auto;
+    height: 100px; /* Ajuste conforme necessário */
+    width: auto; /* Mantém a proporção da imagem */
 }
 
 .nav-links {
     display: flex;
-    align-items: center; /* Alinha verticalmente */
-    gap: 2rem;
+    gap: 2rem; /* Espaçamento entre os links */
 }
 
 .nav-links a {
     text-decoration: none;
     color: white;
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: color 0.3s, transform 0.3s;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    display: flex; /* Garante alinhamento consistente */
-    align-items: center;
-    justify-content: center;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-.social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: white;
-}
-
-.nav-links a:hover,
-.social-link:hover {
+.nav-links a:hover {
     color: #4CAF50;
-    transform: translateY(-2px);
 }
 
 /* Estilo para os links das redes sociais */
@@ -99,7 +81,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/pilatesacrobatico.jpeg');
+    background-image: url('../images/fundo-cadillac.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -280,7 +262,6 @@ body {
     transform: translateY(0);
 }
 
-
 /* Profissional */
 .professional {
     padding: 4rem 2rem;
@@ -307,10 +288,10 @@ body {
 /* Contato */
 .contact {
     padding: 4rem 2rem;
-    background-image: url('../images/fundo-preto-contato.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('../images/plano-fundo-cinza.jpg'); /* Substitua pelo caminho da sua imagem */
     background-size: cover; /* A imagem cobre todo o elemento */
     background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; /* Não repete a imagem */
 }
 
 .contact-container {
@@ -361,44 +342,55 @@ footer {
 
 /* Tablets e dispositivos menores */
 @media screen and (max-width: 768px) {
+    /* Navegação */
     .navigation {
-        background: rgba(0, 0, 0, 0.8); /* Fundo um pouco mais escuro em mobile */
-    }
-
-    .hamburger {
-        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
     }
 
     .nav-logo {
-        margin-left: 1rem;
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.95);
-        flex-direction: column;
-        padding-top: 80px;
-        transition: 0.3s ease-in-out;
-        justify-content: flex-start;
-        align-items: center;
         margin-right: 0;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links a {
-        margin: 15px 0;
-        font-size: 1.2rem;
+        margin-bottom: 1rem;
     }
 
     .logo {
-        height: 60px;
+        height: 80px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    /* Header */
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .header-content p {
+        font-size: 1rem;
+    }
+
+    /* Serviços */
+    .service-card img {
+        height: 300px;
+    }
+
+    /* Galeria */
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        aspect-ratio: 9/16;
+    }
+
+    /* Profissional */
+    .professional img {
+        width: 300px;
+        height: 450px;
     }
 }
 
@@ -527,12 +519,12 @@ footer {
 /* Media queries atualizadas */
 @media screen and (max-width: 768px) {
     .navigation {
-        background: rgba(0, 0, 0, 0.8);
-        justify-content: space-between; /* Ajusta para o menu hamburger */
+        padding: 1rem;
+        position: relative;
     }
 
-    .nav-logo {
-        margin-left: 1rem;
+    .hamburger {
+        display: flex;
     }
 
     .nav-links {
@@ -541,27 +533,21 @@ footer {
         right: -100%;
         height: 100vh;
         width: 100%;
-        background: rgba(0, 0, 0, 0.95);
+        background: rgba(0, 0, 0, 0.9);
         flex-direction: column;
         padding-top: 80px;
         transition: 0.3s ease-in-out;
         justify-content: flex-start;
         align-items: center;
-        margin: 0;
     }
 
     .nav-links.active {
         right: 0;
     }
 
-    .nav-links a,
-    .social-link {
+    .nav-links a {
         margin: 15px 0;
         font-size: 1.2rem;
-    }
-
-    .social-link {
-        font-size: 1.8rem; /* Ícones um pouco maiores no mobile */
     }
 
     .logo {
